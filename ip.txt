@@ -1,0 +1,131 @@
+proxy-groups:
+  - name: "🚀节点选择"
+    type: select
+    proxies:
+      - "♻️自动选择"
+      - "美国"
+      - "日本"
+      - "新加坡"
+      - "韩国"
+      - "香港"
+      - "台湾"
+      - "英国"
+      - "德国"
+      - "法国"
+      - "荷兰"
+      - "加拿大"
+      - "澳大利亚"
+      - "欧洲其他"
+      - "其他地区"
+      - "DIRECT"
+
+  - name: "♻️自动选择"
+    type: url-test
+    proxies: []
+    url: "http://www.gstatic.com/generate_204"
+    interval: 60
+    tolerance: 50
+
+# ========== 美洲 ==========
+  - name: "美国"
+    type: select
+    proxies: [ "US", "♻️自动选择", "DIRECT" ]
+  - name: "加拿大"
+    type: select
+    proxies: [ "CA", "♻️自动选择", "DIRECT" ]
+
+# ========== 亚洲 ==========
+  - name: "日本"
+    type: select
+    proxies: [ "JP", "♻️自动选择", "DIRECT" ]
+  - name: "韩国"
+    type: select
+    proxies: [ "KR", "♻️自动选择", "DIRECT" ]
+  - name: "新加坡"
+    type: select
+    proxies: [ "SG", "♻️自动选择", "DIRECT" ]
+  - name: "哈萨克斯坦"
+    type: select
+    proxies: [ "KZ", "♻️自动选择", "DIRECT" ]
+
+# ========== 港澳台 ==========
+  - name: "香港"
+    type: select
+    proxies: [ "HK", "♻️自动选择", "DIRECT" ]
+  - name: "台湾"
+    type: select
+    proxies: [ "TW", "♻️自动选择", "DIRECT" ]
+
+# ========== 欧洲主区 ==========
+  - name: "英国"
+    type: select
+    proxies: [ "GB", "♻️自动选择", "DIRECT" ]
+  - name: "德国"
+    type: select
+    proxies: [ "DE", "♻️自动选择", "DIRECT" ]
+  - name: "法国"
+    type: select
+    proxies: [ "FR", "♻️自动选择", "DIRECT" ]
+  - name: "荷兰"
+    type: select
+    proxies: [ "NL", "♻️自动选择", "DIRECT" ]
+  - name: "欧洲其他"
+    type: select
+    proxies:
+      - "SE"  #瑞典
+      - "PL"  #波兰
+      - "RO"  #罗马尼亚
+      - "LV"  #拉脱维亚
+      - "EE"  #爱沙尼亚
+      - "FI"  #芬兰
+      - "ES"  #西班牙
+      - "IT"  #意大利
+      - "AT"  #奥地利
+      - "CZ"  #捷克
+      - "CH"  #瑞士
+      - "BG"  #保加利亚
+      - "♻️自动选择"
+      - "DIRECT"
+
+# ========== 大洋洲 ==========
+  - name: "澳大利亚"
+    type: select
+    proxies: [ "AU", "♻️自动选择", "DIRECT" ]
+
+# ========== 其余地区 ==========
+  - name: "其他地区"
+    type: select
+    proxies:
+      - "RU" #俄罗斯
+      - "TR" #土耳其
+      - "♻️自动选择"
+      - "DIRECT"
+
+# ===== 下面对接ACL4SSR原有策略组 =====
+  - name: "🌍国外媒体"
+    type: select
+    proxies: [ "🚀节点选择", "♻️自动选择", "DIRECT" ]
+  - name: "📲电报信息"
+    type: select
+    proxies: [ "🚀节点选择", "DIRECT" ]
+  - name: "Ⓜ️微软服务"
+    type: select
+    proxies: [ "DIRECT", "🚀节点选择" ]
+  - name: "🍎苹果服务"
+    type: select
+    proxies: [ "🚀节点选择", "DIRECT" ]
+  - name: "📢谷歌FCM"
+    type: select
+    proxies: [ "🚀节点选择", "DIRECT","♻️自动选择" ]
+  - name: "🎯全球直连"
+    type: select
+    proxies: [ "DIRECT", "🚀节点选择","♻️自动选择" ]
+  - name: "🛑全球拦截"
+    type: select
+    proxies: [ "REJECT", "DIRECT" ]
+  - name: "🍃应用净化"
+    type: select
+    proxies: [ "REJECT", "DIRECT" ]
+  - name: "🐟漏网之鱼"
+    type: select
+    proxies: [ "🚀节点选择", "🎯全球直连","♻️自动选择" ]
